@@ -6,8 +6,8 @@
                 <img src="{{ asset('assets/img/pengguna/profile-admin.png') }}" class="img-fluid pengguna-image"
                     alt="Pengguna Profile" draggable="false">
                 <div class="profile-user">
-                    <h6 class="user-name">{{ auth()->user()->nama_lengkap }}</h6>
-                    <p class="user-role">{{ auth()->user()->role }}</p>
+                    <h6 class="user-name">Aditya Prayatna</h6>
+                    <p class="user-role">Admin</p>
                 </div>
             </div>
             <div class="arrow-border d-flex align-items-center justify-content-center">
@@ -23,7 +23,7 @@
                     </div>
                     <p>Pengguna</p>
                 </a>
-                <form method="POST" action="{{ route('logout') }}">
+                <form method="POST" action="">
                     @csrf
                     <button type="submit" class="wrapper d-flex align-items-center">
                         <div class="wrapper-topbar">

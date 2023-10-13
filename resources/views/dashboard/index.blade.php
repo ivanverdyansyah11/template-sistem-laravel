@@ -2,21 +2,12 @@
 
 @section('content')
     <div class="content">
-        @if (auth()->user()->role === 'owner' || auth()->user()->role === 'admin')
-            <div class="row">
-                <div class="col-12">
-                    <div class="alert alert-success alert-dashboard mb-4" role="alert">
-                        <a href="{{ route('pengembalian') }}" class="link-alert d-inline-block">Lihat Kendaraan Disewa</a>
-                    </div>
-                </div>
-            </div>
-        @endif
         <div class="row mb-4">
             <div class="col-md-4 mb-4 mb-md-0">
                 <div class="card-default d-flex align-items-start justify-content-between">
                     <div class="card-caption">
-                        <p class="caption-name">Kendaraan Terdaftar</p>
-                        <h4 class="caption-value">{{ $kendaraan->count() }}</h4>
+                        <p class="caption-name">Destinasi Terdaftar</p>
+                        <h4 class="caption-value">100</h4>
                     </div>
                     <div class="wrapper-icon d-flex justify-content-center align-items-center">
                         <img src="{{ asset('assets/img/dashboard/stok.svg') }}" class="img-fluid dashboard-img"
@@ -27,8 +18,8 @@
             <div class="col-md-4 mb-4 mb-md-0">
                 <div class="card-default d-flex align-items-start justify-content-between">
                     <div class="card-caption">
-                        <p class="caption-name">Pelanggan Terdaftar</p>
-                        <h4 class="caption-value">{{ $pelanggan->count() }}</h4>
+                        <p class="caption-name">Owner Terdaftar</p>
+                        <h4 class="caption-value">100</h4>
                     </div>
                     <div class="wrapper-icon d-flex justify-content-center align-items-center">
                         <img src="{{ asset('assets/img/dashboard/pelanggan.svg') }}" class="img-fluid dashboard-img"
@@ -39,8 +30,8 @@
             <div class="col-md-4">
                 <div class="card-default d-flex align-items-start justify-content-between">
                     <div class="card-caption">
-                        <p class="caption-name">Sopir Terdaftar</p>
-                        <h4 class="caption-value">{{ $sopir->count() }}</h4>
+                        <p class="caption-name">Wisatawan Terdaftar</p>
+                        <h4 class="caption-value">100</h4>
                     </div>
                     <div class="wrapper-icon d-flex justify-content-center align-items-center">
                         <img src="{{ asset('assets/img/dashboard/pelanggan.svg') }}" class="img-fluid dashboard-img"
@@ -50,55 +41,6 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 d-flex flex-column flex-md-row flex-lg-column mb-4 mb-lg-0">
-                <div
-                    class="card-default card-other w-100 d-flex flex-column align-items-start justify-content-between mb-4 mb-4 me-md-4 me-lg-0">
-                    <div class="wrapper d-flex justify-content-between w-100">
-                        <div class="wrapper-icon d-flex justify-content-center align-items-center">
-                            <img src="{{ asset('assets/img/dashboard/kendaraan.svg') }}" class="img-fluid dashboard-img"
-                                alt="Kendaraan Icon" width="18">
-                        </div>
-                        @if (auth()->user()->role === 'owner' || auth()->user()->role === 'admin')
-                            <a href="{{ route('pemesanan') }}" class="link-dashboard">Lihat Kendaraan</a>
-                        @endif
-                    </div>
-                    <div class="card-caption">
-                        <p class="caption-name">Kendaraan Dibooking</p>
-                        <h4 class="caption-value">{{ $kendaraanBooking->count() }} <span>Kendaraan</span></h4>
-                    </div>
-                </div>
-                <div
-                    class="card-default card-other w-100 d-flex flex-column align-items-start justify-content-between mb-4 mb-4 me-md-4 me-lg-0">
-                    <div class="wrapper d-flex justify-content-between w-100">
-                        <div class="wrapper-icon d-flex justify-content-center align-items-center">
-                            <img src="{{ asset('assets/img/dashboard/kendaraan.svg') }}" class="img-fluid dashboard-img"
-                                alt="Kendaraan Icon" width="18">
-                        </div>
-                        @if (auth()->user()->role === 'owner' || auth()->user()->role === 'admin')
-                            <a href="{{ route('pengembalian') }}" class="link-dashboard">Lihat Kendaraan</a>
-                        @endif
-                    </div>
-                    <div class="card-caption">
-                        <p class="caption-name">Kendaraan Dipesan</p>
-                        <h4 class="caption-value">{{ $kendaraanPesan->count() }} <span>Kendaraan</span></h4>
-                    </div>
-                </div>
-                <div class="card-default card-other w-100 d-flex flex-column align-items-start justify-content-between">
-                    <div class="wrapper d-flex justify-content-between w-100">
-                        <div class="wrapper-icon d-flex justify-content-center align-items-center">
-                            <img src="{{ asset('assets/img/dashboard/servis.svg') }}" class="img-fluid dashboard-img"
-                                alt="Servis Icon" width="18">
-                        </div>
-                        @if (auth()->user()->role === 'owner' || auth()->user()->role === 'admin')
-                            <a href="{{ route('servis') }}" class="link-dashboard">Lihat Kendaraan</a>
-                        @endif
-                    </div>
-                    <div class="card-caption">
-                        <p class="caption-name">Kendaraan Diservis</p>
-                        <h4 class="caption-value">{{ $kendaraanServis->count() }} <span>Kendaraan</span></h4>
-                    </div>
-                </div>
-            </div>
             <div class="col-12 col-lg">
                 <div class="card-default" style="padding: 26px !important;">
                     <div class="header-card d-flex justify-content-between align-items-center">
@@ -125,23 +67,23 @@
         </div>
     </div>
 
-    <p id="labelJan" class="d-none">{{ $kendaraanPerBulan[1] }}</p>
-    <p id="labelFeb" class="d-none">{{ $kendaraanPerBulan[2] }}</p>
-    <p id="labelMar" class="d-none">{{ $kendaraanPerBulan[3] }}</p>
-    <p id="labelApr" class="d-none">{{ $kendaraanPerBulan[4] }}</p>
-    <p id="labelMei" class="d-none">{{ $kendaraanPerBulan[5] }}</p>
-    <p id="labelJun" class="d-none">{{ $kendaraanPerBulan[6] }}</p>
-    <p id="labelJul" class="d-none">{{ $kendaraanPerBulan[7] }}</p>
-    <p id="labelAgu" class="d-none">{{ $kendaraanPerBulan[8] }}</p>
-    <p id="labelSep" class="d-none">{{ $kendaraanPerBulan[9] }}</p>
-    <p id="labelOkt" class="d-none">{{ $kendaraanPerBulan[10] }}</p>
-    <p id="labelNov" class="d-none">{{ $kendaraanPerBulan[11] }}</p>
-    <p id="labelDes" class="d-none">{{ $kendaraanPerBulan[12] }}</p>
+    <p id="labelJan" class="d-none">50</p>
+    <p id="labelFeb" class="d-none">50</p>
+    <p id="labelMar" class="d-none">50</p>
+    <p id="labelApr" class="d-none">50</p>
+    <p id="labelMei" class="d-none">50</p>
+    <p id="labelJun" class="d-none">50</p>
+    <p id="labelJul" class="d-none">50</p>
+    <p id="labelAgu" class="d-none">50</p>
+    <p id="labelSep" class="d-none">50</p>
+    <p id="labelOkt" class="d-none">50</p>
+    <p id="labelNov" class="d-none">50</p>
+    <p id="labelDes" class="d-none">50</p>
 
-    <p id="labelMingguPertama" class="d-none">{{ $kendaraanPerMinggu[0] }}</p>
-    <p id="labelMingguKedua" class="d-none">{{ $kendaraanPerMinggu[1] }}</p>
-    <p id="labelMingguKetiga" class="d-none">{{ $kendaraanPerMinggu[2] }}</p>
-    <p id="labelMingguKeempat" class="d-none">{{ $kendaraanPerMinggu[3] }}</p>
+    <p id="labelMingguPertama" class="d-none">50</p>
+    <p id="labelMingguKedua" class="d-none">50</p>
+    <p id="labelMingguKetiga" class="d-none">50</p>
+    <p id="labelMingguKeempat" class="d-none">50</p>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

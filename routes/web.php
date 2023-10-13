@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\BrandKendaraanController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DestinasiController;
 use App\Http\Controllers\JenisKendaraanController;
 use App\Http\Controllers\KategoriKilometerKendaraanController;
 use App\Http\Controllers\KendaraanController;
@@ -39,5 +40,21 @@ Route::middleware('guest')->group(function () {
     Route::controller(AuthController::class)->group(function () {
         Route::get('/login', 'login')->name('login');
         Route::get('/register', 'register')->name('register');
+    });
+
+    Route::controller(DashboardController::class)->group(function () {
+        Route::get('/dashboard', 'index')->name('dashboard');
+    });
+
+    Route::controller(PenggunaController::class)->group(function () {
+        Route::get('/pengguna', 'index')->name('pengguna');
+    });
+
+    Route::controller(DestinasiController::class)->group(function () {
+        Route::get('/destinasi', 'index')->name('destinasi');
+    });
+
+    Route::controller(LaporanController::class)->group(function () {
+        Route::get('/laporan', 'index')->name('laporan');
     });
 });
