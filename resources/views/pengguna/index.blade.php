@@ -17,10 +17,10 @@
         </div>
         <div class="row mb-4">
             <div class="col-12 d-flex justify-content-between align-items-center">
-                <form class="form-search d-inline-block" method="POST" action="{{ route('pengguna.search') }}">
+                <form class="form-search d-inline-block" method="POST" action="">
                     @csrf
                     <div class="wrapper-search">
-                        <input type="text" class="input-search" placeholder=" " name="search">
+                        <input type="text" class="input-search" placeholder=" " name="search" autocomplete="off">
                         <label class="d-flex align-items-center">
                             <img src="{{ asset('assets/img/button/search.svg') }}" alt="Searcing Icon"
                                 class="img-fluid search-icon">
@@ -28,14 +28,12 @@
                         </label>
                     </div>
                 </form>
-                @if (auth()->user()->role == 'admin')
-                    <button type="button" class="button-primary d-none d-md-flex align-items-center" data-bs-toggle="modal"
-                        data-bs-target="#tambahPenggunaModal">
-                        <img src="{{ asset('assets/img/button/add.svg') }}" alt="Button Tambah Icon"
-                            class="img-fluid button-icon">
-                        Tambah
-                    </button>
-                @endif
+                <button type="button" class="button-primary d-none d-md-flex align-items-center" data-bs-toggle="modal"
+                    data-bs-target="#tambahPenggunaModal">
+                    <img src="{{ asset('assets/img/button/add.svg') }}" alt="Button Tambah Icon"
+                        class="img-fluid button-icon">
+                    Tambah
+                </button>
             </div>
         </div>
         <div class="row table-default">
@@ -44,59 +42,69 @@
                     <div class="col data-header">Nama Lengkap</div>
                     <div class="col d-none d-lg-inline-block data-header">Email</div>
                     <div class="col d-none d-lg-inline-block data-header">Role</div>
-                    @if (auth()->user()->role == 'admin')
-                        <div class="col-3 col-xl-2 data-header"></div>
-                    @endif
+                    <div class="col-3 col-xl-2 data-header"></div>
                 </div>
             </div>
-            @if ($penggunas->count() == 0)
-                <div class="col-12 table-row table-border">
-                    <div class="row table-data gap-4 align-items-center">
-                        <div class="col data-value data-length"></div>
-                    </div>
-                </div>
-            @else
-                @foreach ($penggunas as $pengguna)
-                    <div class="col-12 table-row table-border">
-                        <div class="row table-data gap-4 align-items-center">
-                            <div class="col data-value data-length">{{ $pengguna->nama_lengkap }}</div>
-                            <div class="col data-value data-length data-length-none">{{ $pengguna->email }}</div>
-                            <div class="col data-value data-length data-length-none text-capitalize">
-                                {{ $pengguna->role }}</div>
-                            @if (auth()->user()->role == 'admin')
-                                <div class="col-3 col-xl-2 data-value d-flex justify-content-end">
-                                    <div class="wrapper-action d-flex">
-                                        <button type="button"
-                                            class="button-action button-detail d-flex justify-content-center align-items-center"
-                                            data-bs-toggle="modal" data-bs-target="#detailPenggunaModal"
-                                            data-id="{{ $pengguna->id }}">
-                                            <div class="detail-icon"></div>
-                                        </button>
-                                        <button type="button"
-                                            class="button-action button-edit d-none d-md-flex justify-content-center align-items-center"
-                                            data-bs-toggle="modal" data-bs-target="#editPenggunaModal"
-                                            data-id="{{ $pengguna->id }}">
-                                            <div class="edit-icon"></div>
-                                        </button>
-                                        <button type="button"
-                                            class="button-action button-delete d-none d-md-flex justify-content-center align-items-center"
-                                            data-bs-toggle="modal" data-bs-target="#hapusPenggunaModal"
-                                            data-id="{{ $pengguna->id }}">
-                                            <div class="delete-icon"></div>
-                                        </button>
-                                    </div>
-                                </div>
-                            @endif
+            <div class="col-12 table-row table-border">
+                <div class="row table-data gap-4 align-items-center">
+                    <div class="col data-value data-length">Aditya Prayatna</div>
+                    <div class="col data-value data-length data-length-none">aditya123@gmail.com</div>
+                    <div class="col data-value data-length data-length-none text-capitalize">
+                        Admin</div>
+                    <div class="col-3 col-xl-2 data-value d-flex justify-content-end">
+                        <div class="wrapper-action d-flex">
+                            <button type="button"
+                                class="button-action button-detail d-flex justify-content-center align-items-center"
+                                data-bs-toggle="modal" data-bs-target="#detailPenggunaModal">
+                                <div class="detail-icon"></div>
+                            </button>
+                            <button type="button"
+                                class="button-action button-edit d-none d-md-flex justify-content-center align-items-center"
+                                data-bs-toggle="modal" data-bs-target="#editPenggunaModal">
+                                <div class="edit-icon"></div>
+                            </button>
+                            <button type="button"
+                                class="button-action button-delete d-none d-md-flex justify-content-center align-items-center"
+                                data-bs-toggle="modal" data-bs-target="#hapusPenggunaModal">
+                                <div class="delete-icon"></div>
+                            </button>
                         </div>
                     </div>
-                @endforeach
-            @endif
+                </div>
+            </div>
+            <div class="col-12 table-row table-border">
+                <div class="row table-data gap-4 align-items-center">
+                    <div class="col data-value data-length">Ayu Saputri</div>
+                    <div class="col data-value data-length data-length-none">saputri123@gmail.com</div>
+                    <div class="col data-value data-length data-length-none text-capitalize">
+                        Owner</div>
+                    <div class="col-3 col-xl-2 data-value d-flex justify-content-end">
+                        <div class="wrapper-action d-flex">
+                            <button type="button"
+                                class="button-action button-detail d-flex justify-content-center align-items-center"
+                                data-bs-toggle="modal" data-bs-target="#detailPenggunaModal">
+                                <div class="detail-icon"></div>
+                            </button>
+                            <button type="button"
+                                class="button-action button-edit d-none d-md-flex justify-content-center align-items-center"
+                                data-bs-toggle="modal" data-bs-target="#editPenggunaModal">
+                                <div class="edit-icon"></div>
+                            </button>
+                            <button type="button"
+                                class="button-action button-delete d-none d-md-flex justify-content-center align-items-center"
+                                data-bs-toggle="modal" data-bs-target="#hapusPenggunaModal">
+                                <div class="delete-icon"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-12 d-flex justify-content-end mt-4">
                 {{ $penggunas->links() }}
             </div>
-        </div>
+        </div> --}}
     </div>
 
     {{-- MODAL TAMBAH PENGGUNA --}}
@@ -105,7 +113,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <h3 class="title">Tambah Pengguna Baru</h3>
-                <form class="form d-inline-block w-100" method="POST" action="{{ route('pengguna.store') }}">
+                <form class="form d-inline-block w-100" method="POST" action="">
                     @csrf
                     <div class="row">
                         <div class="col-12 mb-4">
@@ -254,36 +262,36 @@
     {{-- END MODAL HAPUS PENGGUNA --}}
 
     <script>
-        $(document).on('click', '[data-bs-target="#detailPenggunaModal"]', function() {
-            let id = $(this).data('id');
-            $.ajax({
-                type: 'get',
-                url: '/pengguna/detail/' + id,
-                success: function(data) {
-                    $('[data-value="nama_lengkap"]').val(data.nama_lengkap);
-                    $('[data-value="email"]').val(data.email);
-                    $('[data-value="role"]').val(data.role);
-                }
-            });
-        });
+        // $(document).on('click', '[data-bs-target="#detailPenggunaModal"]', function() {
+        //     let id = $(this).data('id');
+        //     $.ajax({
+        //         type: 'get',
+        //         url: '/pengguna/detail/' + id,
+        //         success: function(data) {
+        //             $('[data-value="nama_lengkap"]').val(data.nama_lengkap);
+        //             $('[data-value="email"]').val(data.email);
+        //             $('[data-value="role"]').val(data.role);
+        //         }
+        //     });
+        // });
 
-        $(document).on('click', '[data-bs-target="#editPenggunaModal"]', function() {
-            let id = $(this).data('id');
-            $('[data-value="role"] option').remove();
-            $('#editPengguna').attr('action', '/pengguna/edit/' + id);
-            $.ajax({
-                type: 'get',
-                url: '/pengguna/detail/' + id,
-                success: function(data) {
-                    $('[data-value="nama_lengkap"]').val(data.nama_lengkap);
-                    $('[data-value="email"]').val(data.email);
-                }
-            });
-        });
+        // $(document).on('click', '[data-bs-target="#editPenggunaModal"]', function() {
+        //     let id = $(this).data('id');
+        //     $('[data-value="role"] option').remove();
+        //     $('#editPengguna').attr('action', '/pengguna/edit/' + id);
+        //     $.ajax({
+        //         type: 'get',
+        //         url: '/pengguna/detail/' + id,
+        //         success: function(data) {
+        //             $('[data-value="nama_lengkap"]').val(data.nama_lengkap);
+        //             $('[data-value="email"]').val(data.email);
+        //         }
+        //     });
+        // });
 
-        $(document).on('click', '[data-bs-target="#hapusPenggunaModal"]', function() {
-            let id = $(this).data('id');
-            $('#hapusPengguna').attr('action', '/pengguna/hapus/' + id);
-        });
+        // $(document).on('click', '[data-bs-target="#hapusPenggunaModal"]', function() {
+        //     let id = $(this).data('id');
+        //     $('#hapusPengguna').attr('action', '/pengguna/hapus/' + id);
+        // });
     </script>
 @endsection
