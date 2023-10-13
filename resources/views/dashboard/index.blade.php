@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-lg">
+            <div class="col-lg-6">
                 <div class="card-default" style="padding: 26px !important;">
                     <div class="header-card d-flex justify-content-between align-items-center">
                         <h6 class="subtitle">Grafik Penyewaan Kendaraan</h6>
@@ -67,23 +67,23 @@
         </div>
     </div>
 
-    <p id="labelJan" class="d-none">50</p>
-    <p id="labelFeb" class="d-none">50</p>
-    <p id="labelMar" class="d-none">50</p>
-    <p id="labelApr" class="d-none">50</p>
-    <p id="labelMei" class="d-none">50</p>
-    <p id="labelJun" class="d-none">50</p>
-    <p id="labelJul" class="d-none">50</p>
-    <p id="labelAgu" class="d-none">50</p>
-    <p id="labelSep" class="d-none">50</p>
-    <p id="labelOkt" class="d-none">50</p>
-    <p id="labelNov" class="d-none">50</p>
-    <p id="labelDes" class="d-none">50</p>
+    <p id="labelJan" class="d-none">150</p>
+    <p id="labelFeb" class="d-none">150</p>
+    <p id="labelMar" class="d-none">150</p>
+    <p id="labelApr" class="d-none">150</p>
+    <p id="labelMei" class="d-none">150</p>
+    <p id="labelJun" class="d-none">150</p>
+    <p id="labelJul" class="d-none">150</p>
+    <p id="labelAgu" class="d-none">150</p>
+    <p id="labelSep" class="d-none">150</p>
+    <p id="labelOkt" class="d-none">150</p>
+    <p id="labelNov" class="d-none">150</p>
+    <p id="labelDes" class="d-none">150</p>
 
-    <p id="labelMingguPertama" class="d-none">50</p>
-    <p id="labelMingguKedua" class="d-none">50</p>
-    <p id="labelMingguKetiga" class="d-none">50</p>
-    <p id="labelMingguKeempat" class="d-none">50</p>
+    <p id="labelMingguPertama" class="d-none">150</p>
+    <p id="labelMingguKedua" class="d-none">150</p>
+    <p id="labelMingguKetiga" class="d-none">150</p>
+    <p id="labelMingguKeempat" class="d-none">150</p>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -147,18 +147,18 @@
                     ],
                     borderWidth: 0,
                     backgroundColor: [
-                        'rgba(226, 92, 39)',
-                        'rgba(255, 122, 69)',
-                        'rgba(226, 92, 39)',
-                        'rgba(255, 122, 69)',
-                        'rgba(226, 92, 39)',
-                        'rgba(255, 122, 69)',
-                        'rgba(226, 92, 39)',
-                        'rgba(255, 122, 69)',
-                        'rgba(226, 92, 39)',
-                        'rgba(255, 122, 69)',
-                        'rgba(226, 92, 39)',
-                        'rgba(255, 122, 69)',
+                        'rgba(35, 138, 237)',
+                        'rgba(65, 168, 255)',
+                        'rgba(35, 138, 237)',
+                        'rgba(65, 168, 255)',
+                        'rgba(35, 138, 237)',
+                        'rgba(65, 168, 255)',
+                        'rgba(35, 138, 237)',
+                        'rgba(65, 168, 255)',
+                        'rgba(35, 138, 237)',
+                        'rgba(65, 168, 255)',
+                        'rgba(35, 138, 237)',
+                        'rgba(65, 168, 255)',
                     ],
                     showLine: false,
                     borderRadius: 9999,
@@ -199,10 +199,10 @@
                     data: [labelMingguPertama, labelMingguKedua, labelMingguKetiga, labelMingguKeempat],
                     borderWidth: 0,
                     backgroundColor: [
-                        'rgba(226, 92, 39)',
-                        'rgba(255, 122, 69)',
-                        'rgba(226, 92, 39)',
-                        'rgba(255, 122, 69)',
+                        'rgba(35, 138, 237)',
+                        'rgba(65, 168, 255)',
+                        'rgba(35, 138, 237)',
+                        'rgba(65, 168, 255)',
                     ],
                     showLine: false,
                     borderRadius: 9999,
